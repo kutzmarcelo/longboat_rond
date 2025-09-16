@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.77.0",
+    "fast-glob": "^3.3.2"
+  }
+}
