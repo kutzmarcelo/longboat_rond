@@ -1,3 +1,50 @@
+@import 'variables';
+
+
+@mixin theme($bg, $primary, $secondary, $text) {
+  --background: #{$bg};
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --text-color: #{$text};
+}
+
+:root {
+  @include theme(
+    $bg-color,
+    $color-primary,
+    $color-secondary,
+    $text-color
+  );
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+      @include theme(
+        $bg-color-dark,
+        $color-primary-dark,
+        $color-secondary-dark,
+        $text-color-dark
+      );
+    }
+}
+
 body {
-    background-color: red;
+    background-color: var(--background);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1312px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
