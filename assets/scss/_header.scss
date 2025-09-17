@@ -21,6 +21,19 @@
   &__menu {
     flex: 1;
     text-align: center;
+    
+    a {
+      font-family: var(--font-menu);
+      font-weight: 400;
+      font-size: var(--font-size-base);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+
+      &.is-active {
+        font-weight: 600;
+      }
+    }
   }
 
   &__contact-button {

@@ -1,12 +1,15 @@
 @import 'variables';
+@import 'typography';
 @import 'header';
 
 body {
-    background-color: var(--background);
-    color: var(--text-color);
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background);
 }
 
 a {
