@@ -1,19 +1,19 @@
 <div{{ attributes.addClass('card-profile') }}>
   <div class="card-profile__header">
 
-    {% if content.field_image_profile %}
+    {% if content.field_card_profile_image %}
       <div class="card-profile__image">
-        {{ content.field_image_profile }}
+        {{ content.field_card_profile_image }}
       </div>
     {% endif %}
     
     <div class="card-profile__info">
-      {% if content.field_name %}
-        <h3 class="card-profile__name">{{ content.field_name }}</h3>
+      {% if content.field_card_profile_name %}
+        <h3 class="card-profile__name">{{ content.field_card_profile_name }}</h3>
       {% endif %}
 
-      {% if content.field_role %}
-        <p class="card-profile__role">{{ content.field_role }}</p>
+      {% if content.field_card_profile_role %}
+        <p class="card-profile__role">{{ content.field_card_profile_role }}</p>
       {% endif %}
     </div>
 
@@ -21,17 +21,17 @@
 
   <div class="card-profile__content">
 
-    {% if content.field_text_profile %}
+    {% if content.field_card_profile_text %}
       <div class="card-profile__text">
-        {{ content.field_text_profile }}
+        {{ content.field_card_profile_text }}
       </div>
     {% endif %}
 
     <div class="card-profile__socials">
 
-      {% if content.field_facebook_profile %}
+      {% if content.field_card_profile_facebook %}
         <a 
-          href="{{ content.field_facebook_profile.0['#url'] }}" 
+          href="{{ content.field_card_profile_facebook.0['#url'] }}" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="card-profile__social-link"
@@ -44,9 +44,9 @@
         </a>
       {% endif %}
 
-      {% if content.field_linkedin_profile %}
+      {% if content.field_card_profile_linkedin %}
         <a 
-          href="{{ content.field_linkedin_profile.0['#url'] }}" 
+          href="{{ content.field_card_profile_linkedin.0['#url'] }}" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="card-profile__social-link"
@@ -59,9 +59,9 @@
         </a>
       {% endif %}
 
-      {% if content.field_twitter_profile %}
+      {% if content.field_card_profile_twitter %}
         <a 
-          href="{{ content.field_twitter_profile.0['#url'] }}" 
+          href="{{ content.field_card_profile_twitter.0['#url'] }}" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="card-profile__social-link"

@@ -1,0 +1,31 @@
+@use 'globals' as *;
+
+.footer {
+    background: var(--background);
+    color: var(--color-primary);
+    text-align: center;
+    padding: 20px 0;
+    &__logo-image {
+        display: none;
+        height: 112px;
+
+        &--light {
+            display: inline-block;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background: var(--background);
+        color: var(--color-primary);
+        &__logo-image {
+            &--light {
+                display: none;
+            }
+            &--dark {
+                display: inline-block;
+            }
+        }
+    }
+}

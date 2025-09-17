@@ -4,3 +4,23 @@ global-styling:
       dist/css/style.css: {}
   js:
     dist/js/script.js: {}
+
+header:
+  css:
+    theme:
+      dist/css/header.css: {}
+
+footer:
+  css:
+    theme:
+      dist/css/footer.css: {}
+
+team-section:
+  css:
+    theme:
+      dist/css/components/team-section.css: {}
+
+text-image-section:
+  css:
+    theme:
+      dist/css/components/title-text-and-image.css: {}

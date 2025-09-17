@@ -1,11 +1,13 @@
 $bg-color: #ffffff;
-$bg-color-dark: #25394D;
+$bg-color-dark: #001F3F;
 $color-primary: #001F3F;
 $color-primary-dark: #ffffff;
 $color-secondary: #00A6FB;
 $color-secondary-dark: #00A6FB;
 $text-color: #8D8D8D;
 $text-color-dark: #8D8D8D;
+$color-header-border: #D9D9D9;
+
 
 
 @mixin theme($bg, $primary, $secondary, $text) {
@@ -16,12 +18,13 @@ $text-color-dark: #8D8D8D;
 }
 
 :root {
-  @include theme(
-    $bg-color,
-    $color-primary,
-    $color-secondary,
-    $text-color
-  );
+    @include theme(
+        $bg-color,
+        $color-primary,
+        $color-secondary,
+        $text-color
+    );
+    --color-header-border: #{$color-header-border};
 }
 @media (prefers-color-scheme: dark) {
     :root {

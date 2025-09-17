@@ -4,8 +4,8 @@
     <div class="header__container container">
 
       <a href="{{ url('<front>') }}" class="header__logo">
-        <img src="{{ directory }}/images/logo-longboat-rond.png" alt="Longboat Rond" class="header__logo-image header__logo-image--light">
-        <img src="{{ directory }}/images/logo-longboat-rond-white.png" alt="Longboat Rond" class="header__logo-image header__logo-image--dark">
+        <img src="{{ base_path }}{{ directory }}/images/logo-longboat-rond.png" alt="Longboat Rond" class="header__logo-image header__logo-image--light">
+        <img src="{{ base_path }}{{ directory }}/images/logo-longboat-rond-white.png" alt="Longboat Rond" class="header__logo-image header__logo-image--dark">
       </a>
 
       <div class="header__menu">
@@ -31,11 +31,13 @@
 
   {% if page.footer %}
     <footer class="footer" role="contentinfo">
-      <a href="{{ url('<front>') }}" class="footer__logo">
-        <img src="{{ directory }}/images/logo-longboat-rond.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--light">
-        <img src="{{ directory }}/images/logo-longboat-rond-white.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--dark">
-      </a>
-      {{ page.footer }}
+      <div class="container">
+        <a href="{{ url('<front>') }}" class="footer__logo">
+          <img src="{{ base_path }}{{ directory }}/images/logo-longboat-rond-footer.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--light">
+          <img src="{{ base_path }}{{ directory }}/images/logo-longboat-rond-white-footer.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--dark">
+        </a>
+        {{ page.footer }}
+      </div>
     </footer>
   {% endif %}
 

@@ -1,6 +1,4 @@
-@import 'variables';
-@import 'typography';
-@import 'header';
+@use 'globals' as *;
 
 body {
   margin: 0;
