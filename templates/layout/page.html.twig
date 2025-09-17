@@ -1,20 +1,40 @@
 <div class="layout-container">
 
-  <header class="header" role="banner">
-    {{ page.header }}
+  <header class="header">
+    <div class="header__container container">
+
+      <a href="{{ url('<front>') }}" class="header__logo">
+        <img src="{{ directory }}/images/logo-longboat-rond.png" alt="Longboat Rond" class="header__logo-image header__logo-image--light">
+        <img src="{{ directory }}/images/logo-longboat-rond-white.png" alt="Longboat Rond" class="header__logo-image header__logo-image--dark">
+      </a>
+
+      <div class="header__menu">
+        {{ page.header }}
+      </div>
+
+      <button class="header__menu-toggle" aria-label="Toggle menu">
+        <span class="header__menu-icon"></span>
+      </button>
+
+    </div>
   </header>
 
+
   <main role="main">
-    <a id="main-content" tabindex="-1"></a>
 
     <div class="layout-content">
+      {{ content.field_paragraphs_content }}
       {{ page.content }}
     </div>
 
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
+      <a href="{{ url('<front>') }}" class="footer__logo">
+        <img src="{{ directory }}/images/logo-longboat-rond.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--light">
+        <img src="{{ directory }}/images/logo-longboat-rond-white.png" alt="Longboat Rond" class="footer__logo-image footer__logo-image--dark">
+      </a>
       {{ page.footer }}
     </footer>
   {% endif %}

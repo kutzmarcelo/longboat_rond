@@ -1,0 +1,31 @@
+{#
+Paragraph name: title_text_and_image
+Description: A paragraph with a title, text, and an image.
+Fields: field_title, field_text, field_image
+#}
+
+<div{{ attributes.addClass('block-text-image') }}>
+  <div class="block-text-image__container container">
+    
+    <div class="block-text-image__content">
+      {% if content.field_title %}
+        <h2 class="block-text-image__title">{{ content.field_title }}</h2>
+      {% endif %}
+
+      {% if content.field_text %}
+        <div class="block-text-image__text">
+          {{ content.field_text }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="block-text-image__media">
+      {% if content.field_image %}
+        <div class="block-text-image__image">
+          {{ content.field_image }}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>

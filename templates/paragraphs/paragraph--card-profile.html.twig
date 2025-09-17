@@ -1,0 +1,81 @@
+<div{{ attributes.addClass('card-profile') }}>
+  <div class="card-profile__header">
+
+    {% if content.field_image_profile %}
+      <div class="card-profile__image">
+        {{ content.field_image_profile }}
+      </div>
+    {% endif %}
+    
+    <div class="card-profile__info">
+      {% if content.field_name %}
+        <h3 class="card-profile__name">{{ content.field_name }}</h3>
+      {% endif %}
+
+      {% if content.field_role %}
+        <p class="card-profile__role">{{ content.field_role }}</p>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div class="card-profile__content">
+
+    {% if content.field_text_profile %}
+      <div class="card-profile__text">
+        {{ content.field_text_profile }}
+      </div>
+    {% endif %}
+
+    <div class="card-profile__socials">
+
+      {% if content.field_facebook_profile %}
+        <a 
+          href="{{ content.field_facebook_profile.0['#url'] }}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="card-profile__social-link"
+        >
+          <img 
+            src="{{ directory }}/images/icon-facebook.svg" 
+            alt="Facebook" 
+            class="card-profile__social-icon"
+          >
+        </a>
+      {% endif %}
+
+      {% if content.field_linkedin_profile %}
+        <a 
+          href="{{ content.field_linkedin_profile.0['#url'] }}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="card-profile__social-link"
+        >
+          <img 
+            src="{{ directory }}/images/icon-linkedin.svg" 
+            alt="LinkedIn" 
+            class="card-profile__social-icon"
+          >
+        </a>
+      {% endif %}
+
+      {% if content.field_twitter_profile %}
+        <a 
+          href="{{ content.field_twitter_profile.0['#url'] }}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="card-profile__social-link"
+        >
+          <img 
+            src="{{ directory }}/images/icon-twitter.svg" 
+            alt="Twitter" 
+            class="card-profile__social-icon"
+          >
+        </a>
+      {% endif %}
+
+
+    {{ dump(content) }}
+
+  </div>
+</div>
