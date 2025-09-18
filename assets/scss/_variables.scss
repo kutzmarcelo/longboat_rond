@@ -1,38 +1,42 @@
 $bg-color: #ffffff;
-$bg-color-dark: #001F3F;
+$bg-color-dark: #25394D;
 $color-primary: #001F3F;
 $color-primary-dark: #ffffff;
-$color-secondary: #00A6FB;
-$color-secondary-dark: #00A6FB;
-$text-color: #8D8D8D;
-$text-color-dark: #8D8D8D;
+$text-color-gray: #8D8D8D;
+$color-text-white: #ffffff;
 $color-header-border: #D9D9D9;
+$color-cards-border: #BCD1E7;
+$color-cards-border-dark: #133150;
+$color-cards-bg: #ffffff;
+$color-cards-bg-dark: #001B37;
+$color-btn-bg: #00A6FB;
 
-
-
-@mixin theme($bg, $primary, $secondary, $text) {
+@mixin theme($bg, $primary, $cards-border, $cards-bg) {
   --background: #{$bg};
   --color-primary: #{$primary};
-  --color-secondary: #{$secondary};
-  --text-color: #{$text};
+  --color-cards-border: #{$cards-border};
+  --color-cards-bg: #{$cards-bg};
 }
 
 :root {
     @include theme(
         $bg-color,
         $color-primary,
-        $color-secondary,
-        $text-color
+        $color-cards-border,
+        $color-cards-bg
     );
+    --text-color-gray: #{$text-color-gray};
+    --color-text-white: #{$color-text-white};
     --color-header-border: #{$color-header-border};
+    --color-btn-bg: #{$color-btn-bg};
 }
 @media (prefers-color-scheme: dark) {
     :root {
       @include theme(
         $bg-color-dark,
         $color-primary-dark,
-        $color-secondary-dark,
-        $text-color-dark
+        $color-cards-border-dark,
+        $color-cards-bg-dark
       );
     }
 }
