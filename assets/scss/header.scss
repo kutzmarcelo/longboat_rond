@@ -1,8 +1,8 @@
 @use 'globals' as *;
 
 .header {
-  background: var(--background);
-  border-bottom: 1px solid var(--color-header-border);
+  background: var(--color-bg-header);
+  border-bottom: 1px solid var(--color-border-gray);
 
   &__container {
     display: flex;
@@ -29,6 +29,10 @@
   &__menu {
     flex: 1;
     text-align: center;
+    display: none;
+    @media(min-width: 1024px) {
+      display: block;
+    }
 
     nav > ul {
       list-style: none;
@@ -46,7 +50,7 @@
           margin-left: auto;
             a {
               background: var(--color-btn-bg);
-              color: var(--color-text-white);
+              color: var(--color-white);
               border: 1px solid var(--color-btn-bg);
               padding: 0.5rem 1rem;
               border-radius: 6px;
@@ -54,7 +58,7 @@
               transition: background 0.2s;
               &:hover {
                 background: var(--color-primary);
-                color: var(--text-color-white);
+                color: var(--color-white);
                 border-color: var(--color-primary);
               }
             }
@@ -66,10 +70,14 @@
       font-family: var(--font-menu);
       font-weight: 400;
       font-size: var(--font-size-base);
-      color: var(--text-color-gray);
+      color: var(--color-text);
       text-decoration: none;
       padding: 0.5rem 1.25rem;
       display: inline-block;
+      transition: color 0.2s;
+      &:hover {
+        color: var(--color-primary);
+      }
 
       &.is-active {
         color: var(--color-primary);
@@ -78,11 +86,54 @@
     }
 
     &-toggle {
-      display: none;
+      display: block;
       background: none;
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background-color: var(--color-btn-bg);
+      border-radius: 6px;
+      position: relative;
+      @media (min-width: 1024px) {
+        display: none;
+      }
+      &__icon {
+        display: block;
+        width: 24px;
+        height: 3px;
+        margin: 0 auto;
+        border-radius: 2px;
+        background-color: var(--color-white);
+        position: absolute;
+        left: 50%;
+        top: 12px;
+        transform: translate(-50%, 0);
+        transition: all 0.3s ease;
+        &:nth-child(2) {
+          top: 20px;          
+        }
+        &:nth-child(3) {
+          top: 28px;
+        }
+      }
+      &--active {
+        .header__menu-toggle__icon {
+          &:nth-child(1) {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+        }
+      }
     }
 
   }
@@ -91,7 +142,6 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   .header {
-    background: var(--background);
 
     &__logo-image {
       &--light {
@@ -100,6 +150,11 @@
       &--dark {
         display: inline-block;
       }
+    }
+    .header__menu nav>ul li:last-child a:hover {
+      background: var(--color-primary);
+      color: var(--color-blue-900);
+      border-color: var(--color-primary);
     }
   }
 }

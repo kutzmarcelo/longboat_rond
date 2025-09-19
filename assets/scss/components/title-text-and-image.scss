@@ -1,6 +1,43 @@
 @use '../globals' as *;
 
 .block-text-image {
-    background-color: red;
+    background-color: var(--color-blue-100);
     overflow: hidden;
+    padding: 73px 0;
+    &__title {
+        color: var(--color-title);
+        margin-bottom: 15px;
+    }
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 768px) {
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__content {
+        width: 100%;
+        color: var(--color-gray-text-image);
+        @media (min-width: 768px) {
+            width: 50%;
+            padding-right: 30px;
+            max-width: 510px;
+        }
+        a {
+            color: var(--color-gray-text-image);
+            text-decoration: underline;
+            &:hover {
+                color: var(--color-blue-900);
+            }
+        }
+    }
+    &__media {
+        width: 100%;
+        margin-top: 30px;
+        @media (min-width: 768px) {
+            width: 50%;
+            margin-top: 0; 
+        }
+    }
 }

@@ -1,81 +1,71 @@
-<div{{ attributes.addClass('card-profile') }}>
-  <div class="card-profile__header">
+<div{{ attributes.addClass('team-section__card') }}>
+  <div class="team-section__card__header">
 
     {% if content.field_card_profile_image %}
-      <div class="card-profile__image">
+      <div class="team-section__card__image">
         {{ content.field_card_profile_image }}
       </div>
     {% endif %}
     
-    <div class="card-profile__info">
+    <div class="team-section__card__info">
       {% if content.field_card_profile_name %}
-        <h3 class="card-profile__name">{{ content.field_card_profile_name }}</h3>
+        <h3 class="team-section__card__name">{{ content.field_card_profile_name }}</h3>
       {% endif %}
 
       {% if content.field_card_profile_role %}
-        <p class="card-profile__role">{{ content.field_card_profile_role }}</p>
+        <div class="team-section__card__role">{{ content.field_card_profile_role }}</div>
       {% endif %}
     </div>
 
   </div>
 
-  <div class="card-profile__content">
 
-    {% if content.field_card_profile_text %}
-      <div class="card-profile__text">
-        {{ content.field_card_profile_text }}
-      </div>
+  {% if content.field_card_profile_text %}
+    <div class="team-section__card__text">
+      {{ content.field_card_profile_text }}
+    </div>
+  {% endif %}
+
+  <div class="team-section__card__socials">
+
+    {% if content.field_card_profile_facebook %}
+      <a 
+        href="{{ content.field_card_profile_facebook.0['#url'] }}" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="team-section__card__social-link"
+      >
+        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 16.592C0 24.795 5.958 31.617 13.75 33V21.083H9.625V16.5H13.75V12.833C13.75 8.708 16.408 6.417 20.167 6.417C21.358 6.417 22.642 6.6 23.833 6.783V11H21.725C19.708 11 19.25 12.008 19.25 13.292V16.5H23.65L22.917 21.083H19.25V33C27.042 31.617 33 24.797 33 16.592C33 7.466 25.575 0 16.5 0C7.425 0 0 7.466 0 16.592Z" fill="#3D445C"/>
+        </svg>
+      </a>
     {% endif %}
 
-    <div class="card-profile__socials">
+    {% if content.field_card_profile_linkedin %}
+      <a 
+        href="{{ content.field_card_profile_linkedin.0['#url'] }}" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="team-section__card__social-link"
+      >
+        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.5 0C7.387 0 0 7.387 0 16.5s7.387 16.5 16.5 16.5 16.5-7.387 16.5-16.5S25.613 0 16.5 0zm-4.039 23.339H9.12V12.586h3.341v10.753zm-1.691-12.073c-1.055 0-1.737-.748-1.737-1.672 0-.944.703-1.669 1.781-1.669 1.078 0 1.738.725 1.759 1.669 0 .924-.681 1.672-1.803 1.672zm14.894 12.073h-3.341V17.38c0-1.387-.485-2.329-1.693-2.329-.923 0-1.471.638-1.713 1.251-.089.219-.112.528-.112.836v6.199h-3.343V16.015c0-1.342-.043-2.464-.088-3.43h2.903l.153 1.494h.067c.44-.701 1.517-1.736 3.32-1.736 2.198 0 3.846 1.473 3.846 4.639v6.358z" fill="#3D445C"/>
+        </svg>
+      </a>
+    {% endif %}
 
-      {% if content.field_card_profile_facebook %}
-        <a 
-          href="{{ content.field_card_profile_facebook.0['#url'] }}" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="card-profile__social-link"
-        >
-          <img 
-            src="{{ directory }}/images/icon-facebook.svg" 
-            alt="Facebook" 
-            class="card-profile__social-icon"
-          >
-        </a>
-      {% endif %}
-
-      {% if content.field_card_profile_linkedin %}
-        <a 
-          href="{{ content.field_card_profile_linkedin.0['#url'] }}" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="card-profile__social-link"
-        >
-          <img 
-            src="{{ directory }}/images/icon-linkedin.svg" 
-            alt="LinkedIn" 
-            class="card-profile__social-icon"
-          >
-        </a>
-      {% endif %}
-
-      {% if content.field_card_profile_twitter %}
-        <a 
-          href="{{ content.field_card_profile_twitter.0['#url'] }}" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="card-profile__social-link"
-        >
-          <img 
-            src="{{ directory }}/images/icon-twitter.svg" 
-            alt="Twitter" 
-            class="card-profile__social-icon"
-          >
-        </a>
-      {% endif %}
-
-
-    {{ dump(content) }}
-
+    {% if content.field_card_profile_twitter %}
+      <a 
+        href="{{ content.field_card_profile_twitter.0['#url'] }}" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="team-section__card__social-link"
+      >
+        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.5 0C7.387 0 0 7.387 0 16.5c0 9.113 7.387 16.5 16.5 16.5s16.5-7.387 16.5-16.5S25.613 0 16.5 0zm6.712 13.516c.008.142.01.283.01.421 0 4.297-3.267 9.249-9.245 9.249-1.766.003-3.496-.504-4.981-1.461.253.031.513.043.776.043 1.523 0 2.924-.517 4.036-1.39-.678-.013-1.335-.237-1.879-.641-.544-.404-.948-.968-1.157-1.613.487.093.988.073 1.466-.057-.736-.149-1.397-.548-1.872-1.129-.475-.581-.735-1.308-.735-2.059v-.04c.439.243.941.391 1.474.408-.69-.459-1.178-1.164-1.365-1.971-.187-.807-.058-1.655.36-2.37.816 1.004 1.834 1.825 2.988 2.41 1.154.585 2.418.922 3.71.988-.164-.697-.093-1.429.202-2.082.295-.653.797-1.19 1.428-1.528.632-.338 1.357-.458 2.064-.341.707.117 1.355.464 1.844.987.727-.144 1.425-.411 2.063-.789-.242.753-.75 1.393-1.428 1.8.644-.078 1.273-.251 1.866-.514-.436.653-.985 1.223-1.621 1.683z" fill="#3D445C"/>
+        </svg>
+      </a>
+    {% endif %}
   </div>
+
 </div>

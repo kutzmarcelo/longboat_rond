@@ -1,6 +1,107 @@
 @use '../globals' as *;
 
 .team-section {
-    background-color: green;
     overflow: hidden;
+    padding: 60px 0 40px;
+    @media(min-width: 768px) {
+        padding: 90px 0 70px;
+    }
+
+    &__cards > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -10px;
+        > div {
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            @media (min-width: 768px) {
+                width: 50%;
+            }
+            @media (min-width: 1024px) {
+                width: 33.3333%;
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background: var(--color-card-bg);
+        border: 1px solid var(--color-card-border);
+        border-radius: 18px;
+        height: 100%;
+        padding: 20px 25px 25px;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        &__image {
+            width: 58px;
+            height: 58px;
+            margin-right: 10px;
+            img {
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+                border: 1px solid var(--color-border-gray);
+            }
+        }
+        &__name {
+            font-size: 1.125rem;
+            color: var(--color-title);
+            margin: 0;
+        }
+        &__role {
+            font-size: 1rem;
+            color: var(--color-role);
+            margin: 0;
+        }
+        &__text {
+            margin-bottom: 15px;
+            margin-top: 15px;
+            line-height: 22px;
+            p {
+                margin: 0 0 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__socials {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            a {
+                display: block;
+                margin: 0 15px 0 0;
+                svg {
+                    display: block;
+                    fill: var(--color-blue-600);
+                    path {
+                        transition: fill 0.2s;
+                    }
+                }
+                &:hover {
+                    svg path {
+                        fill: var(--color-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .team-section {
+        .section__title,
+        &__card__name {
+            color: var(--color-white);
+        }
+    }
 }

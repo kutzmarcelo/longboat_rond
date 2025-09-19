@@ -9,6 +9,8 @@ header:
   css:
     theme:
       dist/css/header.css: {}
+  js:
+    dist/js/header.js: {}
 
 footer:
   css:

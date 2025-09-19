@@ -1,42 +1,60 @@
-$bg-color: #ffffff;
-$bg-color-dark: #25394D;
-$color-primary: #001F3F;
-$color-primary-dark: #ffffff;
-$text-color-gray: #8D8D8D;
-$color-text-white: #ffffff;
-$color-header-border: #D9D9D9;
-$color-cards-border: #BCD1E7;
-$color-cards-border-dark: #133150;
-$color-cards-bg: #ffffff;
-$color-cards-bg-dark: #001B37;
-$color-btn-bg: #00A6FB;
+$color-white: #ffffff;
+$color-gray-200: #D9D9D9;
+$color-gray-500: #8D8D8D;
+$color-gray-600: #5F5F5F;
+$color-gray-700: #767676;
+$color-blue-700: #001B37;
+$color-blue-800: #001F3F;
+$color-blue-100: #BCD1E7;
+$color-blue-200: #00A6FB;
+$color-blue-600: #3D445C;
+$color-blue-900: #133150;
+$color-navy-dark: #25394D;
 
-@mixin theme($bg, $primary, $cards-border, $cards-bg) {
-  --background: #{$bg};
+@mixin theme($bg, $bg-header, $primary, $cards-border, $cards-bg, $role) {
+  --color-bg: #{$bg};
+  --color-bg-header: #{$bg-header};
   --color-primary: #{$primary};
-  --color-cards-border: #{$cards-border};
-  --color-cards-bg: #{$cards-bg};
+  --color-card-border: #{$cards-border};
+  --color-card-bg: #{$cards-bg};
+  --color-role: #{$role};
 }
 
 :root {
-    @include theme(
-        $bg-color,
-        $color-primary,
-        $color-cards-border,
-        $color-cards-bg
-    );
-    --text-color-gray: #{$text-color-gray};
-    --color-text-white: #{$color-text-white};
-    --color-header-border: #{$color-header-border};
-    --color-btn-bg: #{$color-btn-bg};
+  --color-text: #{$color-gray-500};
+  --color-border-gray: #{$color-gray-200};
+  --color-title: #{$color-blue-700};
+  --color-white: #{$color-white};
+  --color-gray-600: #{$color-gray-600};
+  --color-blue-100: #{$color-blue-100};
+  --color-blue-600: #{$color-blue-600};
+  --color-blue-900: #{$color-blue-900};
+  --color-btn-bg: #{$color-blue-200};
+  --color-gray-text-image: #{$color-gray-700};
 }
+
+:root {
+  @include theme(
+    $color-white,
+    $color-white,
+    $color-blue-800,
+    $color-blue-100,
+    $color-white,
+    $color-gray-600
+  );
+}
+
 @media (prefers-color-scheme: dark) {
-    :root {
-      @include theme(
-        $bg-color-dark,
-        $color-primary-dark,
-        $color-cards-border-dark,
-        $color-cards-bg-dark
-      );
-    }
+  :root {
+    @include theme(
+      $color-navy-dark,
+      $color-blue-800,
+      $color-white,
+      $color-blue-900,
+      $color-blue-700,
+      $color-gray-200
+    );
+
+    --color-header-bg: #{$color-navy-dark};
+  }
 }
