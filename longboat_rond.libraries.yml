@@ -17,6 +17,15 @@ footer:
     theme:
       dist/css/footer.css: {}
 
+slider:
+  css:
+    theme:
+      dist/css/components/slider.css: {}
+  js:
+    dist/js/slider.js: {}
+  dependencies:
+    - core/jquery
+
 team-section:
   css:
     theme:

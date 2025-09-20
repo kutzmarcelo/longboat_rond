@@ -1,4 +1,6 @@
 @use 'globals' as *;
+@import 'swiper/css';
+@import 'swiper/css/pagination';
 
 *, *::before, *::after {
   box-sizing: border-box;

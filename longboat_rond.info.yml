@@ -9,6 +9,9 @@ libraries:
   - longboat_rond/global-styling
   - longboat_rond/header
   - longboat_rond/footer
+  - longboat_rond/slider
+  - longboat_rond/team-section
+  - longboat_rond/text-image-section
 
 regions:
   header: 'Header'

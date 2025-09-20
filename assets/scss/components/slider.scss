@@ -1,0 +1,69 @@
+@use '../variables' as *;
+
+.slider {
+    &.swiper {
+        overflow: hidden;
+    }
+    &__item {
+        position: relative;
+        height: 100vh;
+        max-height: calc(100vh - 91px);
+    }
+    &__content {
+        display: block;
+        width: 100%;
+        padding: 0 15px;
+        max-width: 933px;
+        position: absolute;
+        top: 79px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: var(--color-white);
+        a {
+            color: var(--color-white);
+            text-decoration: underline;
+            &:hover {
+                color: var(--color-white);
+            }
+        }
+    }
+    &__title {
+        font-size: 1.75rem;
+        margin: 0 0 2rem;
+        line-height: 1.1;
+        color: var(--color-white);
+        @media (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+        @media (min-width: 1024px) {
+            font-size: 3.25rem;
+        }
+    }
+    &__image img {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        max-height: calc(100vh - 91px);
+    }
+    .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: var(--color-white);
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+}

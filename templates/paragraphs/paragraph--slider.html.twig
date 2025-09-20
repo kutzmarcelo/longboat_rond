@@ -1,0 +1,24 @@
+{% extends "paragraph.html.twig" %}
+
+{% block paragraph %}
+  {{ attach_library('longboat_rond/slider') }}
+  
+
+  <div{{ attributes.addClass('slider swiper') }}>
+    <div class="slider__wrapper swiper-wrapper">
+        {% for item in paragraph.field_slide %}
+            {% set slide = item.entity %}
+            <div class="swiper-slide slider__item">
+                {% if content.field_slide[loop.index0] %}
+                    {{ content.field_slide[loop.index0] }}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+{% endblock %}
