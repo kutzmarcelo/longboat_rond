@@ -1,15 +1,16 @@
+<div{{ attributes.addClass('swiper-slide', 'slider__slide') }}>
+    {% if content.field_slide_title or content.field_slide_text %}
+        <div class="slider__content text-center">
+            {% if content.field_slide_title %}
+                <h2 class="slider__title">{{ content.field_slide_title }}</h2>
+            {% endif %}
+            {% if content.field_slide_text %}
+                <div class="slider__text">{{ content.field_slide_text }}</div>
+            {% endif %}
+        </div>
+    {% endif %}
 
-{% if content.field_slide_title or content.field_slide_text %}
-    <div class="slider__content text-center">
-        {% if content.field_slide_title %}
-            <h2 class="slider__title">{{ content.field_slide_title }}</h2>
-        {% endif %}
-        {% if content.field_slide_text %}
-            <div class="slider__text">{{ content.field_slide_text }}</div>
-        {% endif %}
-    </div>
-{% endif %}
-
-{% if content.field_slide_image %}
-    <div class="slider__image">{{ content.field_slide_image }}</div>
-{% endif %}
+    {% if content.field_slide_image %}
+        <div class="slider__image">{{ content.field_slide_image }}</div>
+    {% endif %}
+</div>

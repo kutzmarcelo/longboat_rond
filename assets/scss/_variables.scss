@@ -11,9 +11,8 @@ $color-blue-600: #3D445C;
 $color-blue-900: #133150;
 $color-navy-dark: #25394D;
 
-@mixin theme($bg, $bg-header, $primary, $cards-border, $cards-bg, $role) {
+@mixin theme($bg, $primary, $cards-border, $cards-bg, $role) {
   --color-bg: #{$bg};
-  --color-bg-header: #{$bg-header};
   --color-primary: #{$primary};
   --color-card-border: #{$cards-border};
   --color-card-bg: #{$cards-bg};
@@ -22,7 +21,7 @@ $color-navy-dark: #25394D;
 
 :root {
   --color-text: #{$color-gray-500};
-  --color-border-gray: #{$color-gray-200};
+  --color-gray-200: #{$color-gray-200};
   --color-title: #{$color-blue-700};
   --color-white: #{$color-white};
   --color-gray-600: #{$color-gray-600};
@@ -36,7 +35,6 @@ $color-navy-dark: #25394D;
 :root {
   @include theme(
     $color-white,
-    $color-white,
     $color-blue-800,
     $color-blue-100,
     $color-white,
@@ -47,7 +45,6 @@ $color-navy-dark: #25394D;
 @media (prefers-color-scheme: dark) {
   :root {
     @include theme(
-      $color-navy-dark,
       $color-blue-800,
       $color-white,
       $color-blue-900,

@@ -4,10 +4,20 @@
     &.swiper {
         overflow: hidden;
     }
-    &__item {
+    .swiper-wrapper {
+        max-height: calc(100vh - 91px);
+        .toolbar-fixed.toolbar-tray-open & {
+            max-height: calc(100vh - 169px);
+        }
+    }
+    &__slide {
         position: relative;
         height: 100vh;
         max-height: calc(100vh - 91px);
+        .toolbar-fixed.toolbar-tray-open & {
+            max-height: calc(100vh - 169px);
+        }
+        
     }
     &__content {
         display: block;
@@ -65,5 +75,17 @@
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
+    }
+    .swiper-pagination-bullet {
+        background: var(--color-gray-200);
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        &:hover, &.swiper-pagination-bullet-active {
+            background: var(--color-white);
+        }
+    }
+    &.swiper-horizontal > .swiper-pagination-bullets {
+        bottom: 40px;
     }
 }

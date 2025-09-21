@@ -21,7 +21,9 @@ slider:
   css:
     theme:
       dist/css/components/slider.css: {}
+      libraries/swiper/css/swiper-bundle.css: {}
   js:
+    libraries/swiper/js/swiper-bundle.js: {}
     dist/js/slider.js: {}
   dependencies:
     - core/jquery

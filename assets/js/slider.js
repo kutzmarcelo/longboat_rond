@@ -1,25 +1,16 @@
-import Swiper from 'swiper';
-//import 'swiper/css';
-/* import 'swiper/css/navigation';
-import 'swiper/css/pagination' */;
-
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.swiper');
-  if (slider && !slider.classList.contains('swiper-initialized')) {
-    new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-    slider.classList.add('swiper-initialized');
-  }
+document.querySelectorAll('.swiper').forEach((sliderEl) => {
+  new Swiper(sliderEl, {
+    loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    pagination: {
+      el: sliderEl.querySelector('.swiper-pagination'),
+      clickable: true,
+    },
+    /* navigation: {
+      nextEl: sliderEl.querySelector('.swiper-button-next'),
+      prevEl: sliderEl.querySelector('.swiper-button-prev'),
+    }, */
+  });
 });
